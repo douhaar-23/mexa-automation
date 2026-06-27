@@ -1,6 +1,8 @@
 import {
   Bot,
+  Calendar,
   CalendarDays,
+  Bell,
   ChevronDown,
   CirclePlay,
   ShieldCheck,
@@ -104,43 +106,50 @@ export default function Home() {
           </div>
         </div>
       </section>
-<section className="relative z-10 mx-2 mt-4 rounded-[28px] border border-white/10 bg-white/[0.03] px-5 md:px-8 py-20 text-white backdrop-blur-xl">
+<section className="relative z-10 mx-2 mt-4 rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-20 text-white backdrop-blur-xl md:px-8">
   <div className="mx-auto max-w-6xl text-center">
-    <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-3xl md:text-5xl">
+    <h2 className="text-3xl font-semibold tracking-[-0.04em] md:text-5xl">
       Why businesses choose{" "}
       <span className="bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
         Mexa
       </span>
     </h2>
 
-    <p className="mx-auto mt-6 max-w-3xl text-base md:text-lg leading-8 font-medium text-slate-400">
+    <p className="mx-auto mt-6 max-w-3xl text-base font-medium leading-8 text-slate-400 md:text-lg">
       Our AI Receptionist helps clinics answer patients instantly, automate bookings, reduce missed appointments, and keep every conversation secure.
     </p>
 
     <div className="mt-14 grid gap-6 md:grid-cols-4">
       {[
-  [
-    "24/7 AI Receptionist",
-    "Patients receive instant replies any time of the day without waiting."
-  ],
-  [
-    "Automatic Appointment Booking",
-    "Book, reschedule, and cancel appointments automatically through WhatsApp."
-  ],
-  [
-    "Reduce No-Shows",
-    "Automatic reminders help reduce missed appointments and save clinic time."
-  ],
-  [
-    "Secure Patient Data",
-    "Patient conversations and booking information are encrypted and securely stored."
-  ]
-].map(([title, text]) => (
+        {
+          icon: Bot,
+          title: "24/7 AI Receptionist",
+          text: "Patients receive instant replies any time of the day without waiting.",
+        },
+        {
+          icon: Calendar,
+          title: "Automatic Appointment Booking",
+          text: "Book, reschedule, and cancel appointments automatically through WhatsApp.",
+        },
+        {
+          icon: Bell,
+          title: "Reduce No-Shows",
+          text: "Automatic reminders help reduce missed appointments and save clinic time.",
+        },
+        {
+          icon: ShieldCheck,
+          title: "Secure Patient Data",
+          text: "Patient conversations and booking information are encrypted and securely stored.",
+        },
+      ].map(({ icon: Icon, title, text }) => (
         <div
           key={title}
           className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left transition hover:-translate-y-1 hover:bg-white/[0.07]"
         >
-          <div className="mb-6 h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-500/30 to-violet-500/30" />
+          <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/30 to-violet-500/30">
+            <Icon className="h-6 w-6 text-cyan-300" />
+          </div>
+
           <h3 className="text-xl font-semibold">{title}</h3>
           <p className="mt-4 text-sm leading-6 text-slate-400">{text}</p>
         </div>
