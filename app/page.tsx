@@ -61,7 +61,7 @@ export default function Home() {
               AI EMPLOYEES THAT NEVER SLEEP
             </div>
 
-            <h1 className="mx-auto max-w-5xl text-5xl font-semibold leading-tight tracking-[-0.04em] md:text-7xl">
+            <h1 className="mx-auto max-w-5xl text-3xl md:text-5xl font-semibold leading-tight tracking-[-0.04em] md:text-7xl">
               While you sleep,
               <br />
               your business{" "}
@@ -70,7 +70,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+            <p className="mx-auto mt-7 max-w-2xl text-base md:text-lg leading-8 text-slate-300">
               AI employees that answer customers, schedule appointments,
               <br className="hidden md:block" />
               automate daily operations, and help your business grow — 24/7.
@@ -96,7 +96,7 @@ export default function Home() {
           <p className="mb-7 text-xs tracking-[0.45em] text-white/45">TRUSTED BY MODERN BUSINESSES</p>
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-10 text-white/45">
             {logos.map((logo) => (
-              <div key={logo} className="flex items-center gap-2 text-lg">
+              <div key={logo} className="flex items-center gap-2 text-base md:text-lg">
                 <Sparkles size={22} />
                 {logo}
               </div>
@@ -104,16 +104,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-<section className="relative z-10 mx-2 mt-4 rounded-[28px] border border-white/10 bg-white/[0.03] px-8 py-20 text-white backdrop-blur-xl">
+<section className="relative z-10 mx-2 mt-4 rounded-[28px] border border-white/10 bg-white/[0.03] px-5 md:px-8 py-20 text-white backdrop-blur-xl">
   <div className="mx-auto max-w-6xl text-center">
-    <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">
+    <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-3xl md:text-5xl">
       Why businesses choose{" "}
       <span className="bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
         Mexa
       </span>
     </h2>
 
-    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 font-medium text-slate-400">
+    <p className="mx-auto mt-6 max-w-3xl text-base md:text-lg leading-8 font-medium text-slate-400">
       Our AI Receptionist helps clinics answer patients instantly, automate bookings, reduce missed appointments, and keep every conversation secure.
     </p>
 
@@ -148,17 +148,17 @@ export default function Home() {
     </div>
   </div>
 </section>
-<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-8 py-24 text-white">
+<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24 text-white">
   <div className="mx-auto max-w-7xl">
     <p className="mb-4 text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
       OUR PRODUCTS
     </p>
 
-    <h2 className="text-center text-5xl font-bold tracking-tight">
+    <h2 className="text-center text-3xl md:text-5xl font-bold tracking-tight">
       Explore Our AI Products
     </h2>
 
-    <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-slate-300">
+    <p className="mx-auto mt-6 max-w-3xl text-center text-base md:text-lg leading-8 text-slate-300">
       Start with our first AI product, then explore more automation solutions built for modern businesses.
     </p>
 
@@ -250,6 +250,246 @@ export default function Home() {
           50% { transform: translate(-50%, -50%) rotate(-8deg) scale(1.04); }
         }
       `}</style>
+      <section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24">
+  <div className="mx-auto max-w-6xl">
+    <p className="text-center text-sm uppercase tracking-[0.35em] text-cyan-300">
+      HOW IT WORKS
+    </p>
+
+    <h2 className="mt-4 text-center text-4xl font-bold">
+      From WhatsApp Message
+      <br />
+      To Confirmed Appointment
+    </h2>
+
+    <div className="mt-16 grid gap-8 lg:grid-cols-4">
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+        <div className="text-4xl">💬</div>
+        <h3 className="mt-4 text-xl font-semibold">
+          Patient Messages
+        </h3>
+        <p className="mt-3 text-slate-400">
+          Patients contact your clinic through WhatsApp.
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+        <div className="text-4xl">🤖</div>
+        <h3 className="mt-4 text-xl font-semibold">
+          AI Answers
+        </h3>
+        <p className="mt-3 text-slate-400">
+          The AI answers questions and collects booking details.
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+        <div className="text-4xl">📅</div>
+        <h3 className="mt-4 text-xl font-semibold">
+          Appointment Created
+        </h3>
+        <p className="mt-3 text-slate-400">
+          Google Calendar is updated automatically.
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+        <div className="text-4xl">✅</div>
+        <h3 className="mt-4 text-xl font-semibold">
+          Automatic Follow-up
+        </h3>
+        <p className="mt-3 text-slate-400">
+          Confirmation and reminder messages are sent automatically.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24 text-white">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
+      PRICING
+    </p>
+
+    <h2 className="mt-4 text-center text-4xl font-bold text-3xl md:text-5xl">
+      Simple plans for growing businesses
+    </h2>
+
+    <p className="mx-auto mt-6 max-w-3xl text-center text-base md:text-lg leading-8 text-slate-300">
+      Start with a free 7-day setup and choose the plan that fits your business.
+    </p>
+
+    <div className="mt-16 grid gap-8 lg:grid-cols-3">
+      {/* Starter */}
+      <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+        <h3 className="text-2xl font-bold">Starter</h3>
+        <p className="mt-4 text-slate-400">For small clinics and businesses starting with AI automation.</p>
+
+        <div className="mt-8">
+          <span className="text-3xl md:text-5xl font-bold">$99</span>
+          <span className="text-slate-400"> / month</span>
+        </div>
+
+        <ul className="mt-8 space-y-4 text-slate-300">
+          <li>✓ WhatsApp AI Receptionist</li>
+          <li>✓ Appointment Booking</li>
+          <li>✓ Google Calendar Integration</li>
+          <li>✓ Basic Support</li>
+        </ul>
+
+        <button className="mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
+          Get Started
+        </button>
+      </div>
+
+      {/* Professional */}
+      <div className="relative rounded-[30px] border border-cyan-400/40 bg-gradient-to-br from-cyan-500/10 to-violet-600/10 p-8 shadow-[0_0_50px_rgba(59,130,246,.20)] transition-all duration-300 hover:-translate-y-2">
+        <span className="absolute right-6 top-6 rounded-full bg-cyan-500/20 px-4 py-2 text-sm text-cyan-300">
+          Most Popular
+        </span>
+
+        <h3 className="text-2xl font-bold">Professional</h3>
+        <p className="mt-4 text-slate-300">For businesses that want full automation and better customer follow-up.</p>
+
+        <div className="mt-8">
+          <span className="text-3xl md:text-5xl font-bold">$249</span>
+          <span className="text-slate-400"> / month</span>
+        </div>
+
+        <ul className="mt-8 space-y-4 text-slate-200">
+          <li>✓ Everything in Starter</li>
+          <li>✓ Appointment Reminders</li>
+          <li>✓ Follow-up Messages</li>
+          <li>✓ Analytics Dashboard</li>
+          <li>✓ Priority Support</li>
+        </ul>
+
+        <button className="mt-10 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 px-6 py-3 font-semibold">
+          Start Free Setup
+        </button>
+      </div>
+
+      {/* Enterprise */}
+      <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+        <h3 className="text-2xl font-bold">Enterprise</h3>
+        <p className="mt-4 text-slate-400">For companies that need custom AI workflows and advanced integrations.</p>
+
+        <div className="mt-8">
+          <span className="text-3xl md:text-5xl font-bold">Custom</span>
+        </div>
+
+        <ul className="mt-8 space-y-4 text-slate-300">
+          <li>✓ Multi-location Support</li>
+          <li>✓ Custom AI Agents</li>
+          <li>✓ CRM Integration</li>
+          <li>✓ Dedicated Support</li>
+        </ul>
+
+        <button className="mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
+          Contact Sales
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
+      TESTIMONIALS
+    </p>
+
+    <h2 className="mt-4 text-center text-3xl font-bold md:text-5xl">
+      What businesses say about Mexa
+    </h2>
+
+    <div className="mt-14 grid gap-8 md:grid-cols-3">
+      {[
+        ["Mexa reduced our missed appointments and helped us respond to patients faster.", "Dr. Sarah Ahmed", "Dental Clinic Owner"],
+        ["Patients now get replies instantly, even outside working hours.", "Smile Dental Clinic", "Clinic Team"],
+        ["Booking became smoother, faster, and much easier for our staff.", "Wellness Hub", "Operations Manager"],
+      ].map(([text, name, role]) => (
+        <div key={name} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          <p className="text-yellow-300">★★★★★</p>
+          <p className="mt-5 leading-8 text-slate-300">“{text}”</p>
+          <div className="mt-6">
+            <p className="font-semibold">{name}</p>
+            <p className="text-sm text-slate-500">{role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
+  <div className="mx-auto max-w-4xl">
+    <p className="text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
+      FAQ
+    </p>
+
+    <h2 className="mt-4 text-center text-3xl font-bold md:text-5xl">
+      Common questions
+    </h2>
+
+    <div className="mt-14 space-y-5">
+      {[
+        ["How long does setup take?", "Most businesses can start with a working setup in 7 days."],
+        ["Does it work with WhatsApp?", "Yes. Mexa can connect with WhatsApp to answer messages and manage bookings."],
+        ["Can it connect to Google Calendar?", "Yes. Appointments can be added to Google Calendar automatically."],
+        ["Is customer data secure?", "Customer conversations and booking data are handled securely."],
+        ["Can I request a custom system?", "Yes. We can build custom AI workflows for different business needs."],
+      ].map(([q, a]) => (
+        <div key={q} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <h3 className="text-lg font-semibold">{q}</h3>
+          <p className="mt-3 text-slate-400">{a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section className="mx-2 mt-4 rounded-[28px] border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-violet-600/10 px-5 py-24 text-center text-white md:px-8">
+  <h2 className="mx-auto max-w-4xl text-3xl font-bold md:text-6xl">
+    Ready to automate your business?
+  </h2>
+
+  <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+    Start with a free demo and see how Mexa can answer customers, book appointments, and automate daily operations.
+  </p>
+
+  <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+    <button className="rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600 px-8 py-4 font-semibold shadow-[0_0_45px_rgba(59,130,246,.35)]">
+      Book a Free Demo →
+    </button>
+
+    <button className="rounded-2xl border border-white/10 px-8 py-4 font-semibold hover:bg-white/10">
+      Contact Sales
+    </button>
+  </div>
+</section>
+
+<footer className="mx-2 mt-4 rounded-t-[28px] border border-white/10 bg-[#020617] px-5 py-10 text-white md:px-8">
+  <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+    <div>
+      <p className="text-2xl font-black">Mexa</p>
+      <p className="mt-1 text-xs tracking-[0.35em] text-cyan-300">AI AUTOMATION</p>
+    </div>
+
+    <div className="flex flex-wrap gap-6 text-sm text-slate-400">
+      <span>Products</span>
+      <span>Pricing</span>
+      <span>Contact</span>
+      <span>Privacy Policy</span>
+      <span>Terms</span>
+    </div>
+
+    <p className="text-sm text-slate-500">
+      © 2026 Mexa Automation
+    </p>
+  </div>
+</footer>
     </main>
   );
 }
