@@ -457,34 +457,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
-  <div className="mx-auto max-w-7xl">
-    <p className="text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
-      TESTIMONIALS
-    </p>
 
-    <h2 className="mt-4 text-center text-3xl font-bold md:text-5xl">
-      What businesses say about Mexa
-    </h2>
-
-    <div className="mt-14 grid gap-8 md:grid-cols-3">
-      {[
-        ["Mexa reduced our missed appointments and helped us respond to patients faster.", "Dr. Sarah Ahmed", "Dental Clinic Owner"],
-        ["Patients now get replies instantly, even outside working hours.", "Smile Dental Clinic", "Clinic Team"],
-        ["Booking became smoother, faster, and much easier for our staff.", "Wellness Hub", "Operations Manager"],
-      ].map(([text, name, role]) => (
-        <div key={name} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-          <p className="text-yellow-300">★★★★★</p>
-          <p className="mt-5 leading-8 text-slate-300">“{text}”</p>
-          <div className="mt-6">
-            <p className="font-semibold">{name}</p>
-            <p className="text-sm text-slate-500">{role}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
 <section id="faq" className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
   <div className="mx-auto max-w-4xl">
@@ -593,11 +566,35 @@ export default function Home() {
     </div>
 
     <div className="flex flex-wrap gap-6 text-sm text-slate-400">
-      <span>Products</span>
-      <a href="#pricing">Pricing</a>
-      <span>Contact</span>
-      <span>Privacy Policy</span>
-      <span>Terms</span>
+      <div className="flex flex-wrap gap-6 text-sm text-slate-400">
+  <a href="#products" className="hover:text-cyan-300 transition">
+    Products
+  </a>
+
+  <a href="#pricing" className="hover:text-cyan-300 transition">
+    Pricing
+  </a>
+
+  <a href="/about" className="hover:text-cyan-300 transition">
+    About
+  </a>
+
+  <a href="/testimonials" className="hover:text-cyan-300 transition">
+    Testimonials
+  </a>
+
+  <a href="/contact" className="hover:text-cyan-300 transition">
+    Contact
+  </a>
+
+  <a href="/privacy" className="hover:text-cyan-300 transition">
+    Privacy Policy
+  </a>
+
+  <a href="/terms" className="hover:text-cyan-300 transition">
+    Terms
+  </a>
+</div>
     </div>
 
     <p className="text-sm text-slate-500">

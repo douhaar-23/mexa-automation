@@ -13,11 +13,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mexa AI Automation",
+  title: "Mexa Automation | AI Automation for Clinics",
   description:
-    "AI employees that automate your business, answer customers, and schedule appointments 24/7.",
+    "AI-powered automation for clinics and service businesses. Automate WhatsApp conversations, appointment booking, reminders, and daily workflows with Mexa.",
+  keywords: [
+    "AI Automation",
+    "Clinic Automation",
+    "WhatsApp Automation",
+    "Appointment Booking",
+    "Medical AI",
+    "Business Automation",
+    "Mexa Automation",
+  ],
+  authors: [{ name: "Mexa Automation" }],
+  creator: "Mexa Automation",
+  applicationName: "Mexa Automation",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
