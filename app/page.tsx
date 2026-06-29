@@ -1,3 +1,4 @@
+"use client";
 import {
   Bot,
   Calendar,
@@ -10,10 +11,27 @@ import {
   Sparkles,
 } from "lucide-react";
 import ChatDemo from "@/components/ChatDemo";
+import FadeIn from "@/components/FadeIn";
+import { useState } from "react";
 
 const logos = ["CLINIC+", "HealthCare Pro", "Smile Center", "DERMA CLINIC", "Wellness Hub", "PureCare"];
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
   return (
     <main className="min-h-screen bg-[#020617] text-white overflow-hidden">
       <section className="relative min-h-screen overflow-hidden rounded-[28px] border border-white/10 bg-[#020617] mx-2 my-2">
@@ -23,7 +41,7 @@ export default function Home() {
         <div className="orbit orbit-two" />
         <div className="star-field" />
 
-        <nav className="relative z-20 flex items-center justify-between px-10 py-7">
+       <nav className="sticky top-4 z-50 mx-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-8 py-7 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,.25)]">
           <div className="flex items-center gap-4">
             <div className="relative h-10 w-12">
               <div className="absolute left-0 top-2 h-8 w-3 rotate-[28deg] rounded-full bg-gradient-to-b from-violet-500 to-blue-500" />
@@ -40,62 +58,92 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden items-center gap-10 text-sm font-medium text-white/95 md:flex">
-            <span className="flex items-center gap-1">Products <ChevronDown size={14} /></span>
-            <span className="flex items-center gap-1">Solutions <ChevronDown size={14} /></span>
-            <span>Pricing</span>
-            <span className="flex items-center gap-1">Resources <ChevronDown size={14} /></span>
-            <span>About Us</span>
-          </div>
+          <div className="hidden items-center gap-10 text-[15px] font-medium text-white/70 md:flex">
 
-          <div className="hidden items-center gap-4 md:flex">
-            <button className="rounded-xl border border-white/10 px-7 py-3 text-sm">Log in</button>
-            <button className="rounded-xl bg-gradient-to-r from-blue-500 to-violet-600 px-7 py-3 text-sm shadow-[0_0_35px_rgba(59,130,246,.45)]">
-              Book a Free Demo
-            </button>
+  <a href="#products" className="group relative flex items-center gap-1 transition-all duration-300 hover:text-cyan-300">
+    Products <ChevronDown size={14} />
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-300 transition-all duration-300 group-hover:w-full"></span>
+  </a>
+
+  <a href="#solutions" className="group relative flex items-center gap-1 transition-all duration-300 hover:text-cyan-300">
+    Solutions <ChevronDown size={14} />
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-300 transition-all duration-300 group-hover:w-full"></span>
+  </a>
+
+  <a href="#pricing" className="group relative transition-all duration-300 hover:text-cyan-300">
+    Pricing
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-300 transition-all duration-300 group-hover:w-full"></span>
+  </a>
+
+  <a href="#faq" className="group relative flex items-center gap-1 transition-all duration-300 hover:text-cyan-300">
+    FAQs <ChevronDown size={14} />
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-300 transition-all duration-300 group-hover:w-full"></span>
+  </a>
+
+  <a href="/about" className="group relative transition-all duration-300 hover:text-cyan-300">
+    About Us
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-300 transition-all duration-300 group-hover:w-full"></span>
+  </a>
+
+</div>
+
+          <div className="hidden items-center gap-5 md:flex">
+            <button className="btn-interactive rounded-xl border border-white/10 px-7 py-3 text-sm text-white/80 hover:border-cyan-400/40 hover:text-white">Log in</button>
+           <a
+  href="/contact"
+  className="btn-interactive rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600 px-9 py-4 text-base font-semibold shadow-[0_0_55px_rgba(59,130,246,.55)]"
+>
+  Book a Free Demo
+</a>
           </div>
         </nav>
 
-        <div className="relative z-10 flex min-h-[72vh] items-center justify-center px-6 text-center">
+        <div className="relative z-10 flex min-h-[72vh] items-center justify-center px-6 text-center overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[160px]" />
+
+<div className="absolute right-0 top-24 -z-10 h-[420px] w-[420px] rounded-full bg-violet-500/10 blur-[150px]" />
           <div>
-            <div className="mx-auto mb-10 flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-xs tracking-[0.22em] text-white/80 backdrop-blur">
+            <div className="mx-auto mb-10 flex w-fit items-center gap-3 rounded-full border border-cyan-400/20 bg-white/[0.04] px-6 py-3 text-xs font-medium tracking-[0.24em] text-white/90 backdrop-blur-xl">
               <span className="h-2 w-2 rounded-full bg-violet-400" />
               AI EMPLOYEES THAT NEVER SLEEP
             </div>
 
-            <h1 className="mx-auto max-w-5xl text-3xl md:text-5xl font-semibold leading-tight tracking-[-0.04em] md:text-7xl">
+           <h1 className="mx-auto max-w-5xl text-5xl md:text-7xl font-bold leading-[1.05] tracking-[-0.06em]">
               While you sleep,
               <br />
               your business{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,.35)]">
                 keeps working.
               </span>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-base md:text-lg leading-8 text-slate-300">
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-400 md:text-xl">
               AI employees that answer customers, schedule appointments,
               <br className="hidden md:block" />
               automate daily operations, and help your business grow — 24/7.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
-              <button className="rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-10 py-4 font-medium shadow-[0_0_45px_rgba(59,130,246,.45)]">
-                Book a Free Demo →
-              </button>
-              <button className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-10 py-4 font-medium backdrop-blur">
+              <a
+  href="/contact"
+  className="btn-interactive rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-9 py-4 text-base font-semibold shadow-[0_0_45px_rgba(59,130,246,.45)]"
+>
+  Book a Free Demo →
+</a>
+              <button className="btn-interactive flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-10 py-4 font-medium backdrop-blur">
                 Watch 60s Demo <CirclePlay size={22} />
               </button>
             </div>
           </div>
         </div>
 
-        <FloatingCard className="left-14 top-56" icon={<CalendarDays />} title="Appointments Booked" value="1,248" sub="+28% this week" />
-        <FloatingCard className="right-16 top-64" icon={<MessageCircle />} title="Messages Handled" value="3,682" sub="+28% this week" green />
-        <FloatingCard className="bottom-48 left-40" icon={<Bot />} title="AI Receptionist" value="Online" sub="Responding now" small />
-        <FloatingCard className="bottom-48 right-32" icon={<ShieldCheck />} title="Trusted & Secure" value="98%" sub="Excellent" />
+        <FloatingCard className="left-8 top-40" icon={<CalendarDays />} title="Appointments Booked" value="1,248" sub="+28% this week" />
+        <FloatingCard className="right-8 top-60" icon={<MessageCircle />} title="Messages Handled" value="3,682" sub="+28% this week" green />
+        <FloatingCard className="bottom-24 left-24" icon={<Bot />} title="AI Receptionist" value="Online" sub="Responding now" small />
+        <FloatingCard className="bottom-24 right-20" icon={<ShieldCheck />} title="Trusted & Secure" value="98%" sub="Excellent" />
 
-        <div className="relative z-10 mb-8 text-center">
-          <p className="mb-7 text-xs tracking-[0.45em] text-white/45">TRUSTED BY MODERN BUSINESSES</p>
+        <div className="relative z-10 -mt-4 mb-10 text-center">
+          <p className="mb-5 text-xs tracking-[0.45em] text-white/45">TRUSTED BY MODERN BUSINESSES</p>
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-10 text-white/45">
             {logos.map((logo) => (
               <div key={logo} className="flex items-center gap-2 text-base md:text-lg">
@@ -108,18 +156,18 @@ export default function Home() {
       </section>
 <section className="relative z-10 mx-2 mt-4 rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-20 text-white backdrop-blur-xl md:px-8">
   <div className="mx-auto max-w-6xl text-center">
-    <h2 className="text-3xl font-semibold tracking-[-0.04em] md:text-5xl">
+    <h2 className="text-4xl font-bold leading-tight tracking-[-0.05em] md:text-6xl">
       Why businesses choose{" "}
       <span className="bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
         Mexa
       </span>
     </h2>
 
-    <p className="mx-auto mt-6 max-w-3xl text-base font-medium leading-8 text-slate-400 md:text-lg">
+    <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-400 md:text-xl">
       Our AI Receptionist helps clinics answer patients instantly, automate bookings, reduce missed appointments, and keep every conversation secure.
     </p>
 
-    <div className="mt-14 grid gap-6 md:grid-cols-4">
+    <div className="mt-16 grid gap-8 md:grid-cols-4">
       {[
         {
           icon: Bot,
@@ -144,20 +192,21 @@ export default function Home() {
       ].map(({ icon: Icon, title, text }) => (
         <div
           key={title}
-          className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left transition hover:-translate-y-1 hover:bg-white/[0.07]"
+          className="card-interactive rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left"
         >
-          <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/30 to-violet-500/30">
-            <Icon className="h-6 w-6 text-cyan-300" />
-          </div>
+          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-violet-500/20 ring-1 ring-cyan-400/20 shadow-[0_10px_30px_rgba(34,211,238,0.12)]">
+  <Icon className="h-8 w-8 text-cyan-300" />
+</div>
 
-          <h3 className="text-xl font-semibold">{title}</h3>
+          <h3 className="text-2xl font-bold">{title}</h3>
           <p className="mt-4 text-sm leading-6 text-slate-400">{text}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
-<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24 text-white">
+
+<section id="products" className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24 text-white">
   <div className="mx-auto max-w-7xl">
     <p className="mb-4 text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
       OUR PRODUCTS
@@ -183,7 +232,7 @@ export default function Home() {
           A 24/7 AI receptionist that answers patient inquiries, books appointments, sends reminders, follows up automatically, and integrates with WhatsApp and Google Calendar.
         </p>
 
-        <button className="mt-8 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 px-6 py-3 font-semibold">
+        <button className="btn-interactive mt-8 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 px-6 py-3 font-semibold">
           View Product →
         </button>
       </div>
@@ -249,17 +298,22 @@ export default function Home() {
           animation: cardFloat 5.5s ease-in-out infinite;
         }
 
-        @keyframes cardFloat {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-16px); }
-        }
+       @keyframes cardFloat {
+  0%,100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(16px) scale(1.03);
+  }
+}
 
         @keyframes floatOrbit {
           0%, 100% { transform: translate(-50%, -50%) rotate(-12deg) scale(1); }
           50% { transform: translate(-50%, -50%) rotate(-8deg) scale(1.04); }
         }
       `}</style>
-      <section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24">
+      <section id="solutions" className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
   <div className="mx-auto max-w-6xl">
     <p className="text-center text-sm uppercase tracking-[0.35em] text-cyan-300">
       HOW IT WORKS
@@ -273,7 +327,7 @@ export default function Home() {
 
     <div className="mt-16 grid gap-8 lg:grid-cols-4">
 
-      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+      <div className="card-interactive rounded-3xl border border-white/10 bg-white/[0.04] p-7">
         <div className="text-4xl">💬</div>
         <h3 className="mt-4 text-xl font-semibold">
           Patient Messages
@@ -283,7 +337,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+      <div className="card-interactive rounded-3xl border border-white/10 bg-white/[0.04] p-7">
         <div className="text-4xl">🤖</div>
         <h3 className="mt-4 text-xl font-semibold">
           AI Answers
@@ -293,7 +347,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+      <div className="card-interactive rounded-3xl border border-white/10 bg-white/[0.03] p-6">
         <div className="text-4xl">📅</div>
         <h3 className="mt-4 text-xl font-semibold">
           Appointment Created
@@ -303,7 +357,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+      <div className="card-interactive rounded-3xl border border-white/10 bg-white/[0.03] p-6">
         <div className="text-4xl">✅</div>
         <h3 className="mt-4 text-xl font-semibold">
           Automatic Follow-up
@@ -316,7 +370,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 md:px-8 py-24 text-white">
+<section id="pricing" className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
   <div className="mx-auto max-w-7xl">
     <p className="text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
       PRICING
@@ -332,7 +386,7 @@ export default function Home() {
 
     <div className="mt-16 grid gap-8 lg:grid-cols-3">
       {/* Starter */}
-      <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+      <div className="card-interactive rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
         <h3 className="text-2xl font-bold">Starter</h3>
         <p className="mt-4 text-slate-400">For small clinics and businesses starting with AI automation.</p>
 
@@ -348,16 +402,16 @@ export default function Home() {
           <li>✓ Basic Support</li>
         </ul>
 
-        <button className="mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
+        <button className="btn-interactive mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
           Get Started
         </button>
       </div>
 
       {/* Professional */}
-      <div className="relative rounded-[30px] border border-cyan-400/40 bg-gradient-to-br from-cyan-500/10 to-violet-600/10 p-8 shadow-[0_0_50px_rgba(59,130,246,.20)] transition-all duration-300 hover:-translate-y-2">
-        <span className="absolute right-6 top-6 rounded-full bg-cyan-500/20 px-4 py-2 text-sm text-cyan-300">
-          Most Popular
-        </span>
+      <div className="card-interactive relative scale-[1.04] rounded-[30px] border border-cyan-400/40 bg-gradient-to-br from-cyan-500/10 to-violet-600/10 p-8 shadow-[0_0_50px_rgba(59,130,246,.20)]">
+        <span className="absolute right-6 top-6 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/15 to-violet-500/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300 backdrop-blur">
+  Most Popular
+</span>
 
         <h3 className="text-2xl font-bold">Professional</h3>
         <p className="mt-4 text-slate-300">For businesses that want full automation and better customer follow-up.</p>
@@ -375,13 +429,13 @@ export default function Home() {
           <li>✓ Priority Support</li>
         </ul>
 
-        <button className="mt-10 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 px-6 py-3 font-semibold">
+        <button className="btn-interactive mt-10 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 px-6 py-3 font-semibold">
           Start Free Setup
         </button>
       </div>
 
       {/* Enterprise */}
-      <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/[0.05]">
+      <div className="card-interactive rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
         <h3 className="text-2xl font-bold">Enterprise</h3>
         <p className="mt-4 text-slate-400">For companies that need custom AI workflows and advanced integrations.</p>
 
@@ -396,7 +450,7 @@ export default function Home() {
           <li>✓ Dedicated Support</li>
         </ul>
 
-        <button className="mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
+        <button className="btn-interactive mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
           Contact Sales
         </button>
       </div>
@@ -432,7 +486,7 @@ export default function Home() {
   </div>
 </section>
 
-<section className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
+<section id="faq" className="mx-2 mt-4 rounded-[28px] border border-white/10 bg-[#040816] px-5 py-24 text-white md:px-8">
   <div className="mx-auto max-w-4xl">
     <p className="text-center text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
       FAQ
@@ -444,22 +498,68 @@ export default function Home() {
 
     <div className="mt-14 space-y-5">
       {[
-        ["How long does setup take?", "Most businesses can start with a working setup in 7 days."],
-        ["Does it work with WhatsApp?", "Yes. Mexa can connect with WhatsApp to answer messages and manage bookings."],
-        ["Can it connect to Google Calendar?", "Yes. Appointments can be added to Google Calendar automatically."],
-        ["Is customer data secure?", "Customer conversations and booking data are handled securely."],
-        ["Can I request a custom system?", "Yes. We can build custom AI workflows for different business needs."],
-      ].map(([q, a]) => (
-        <div key={q} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-          <h3 className="text-lg font-semibold">{q}</h3>
-          <p className="mt-3 text-slate-400">{a}</p>
-        </div>
-      ))}
+  [
+    "How long does setup take?",
+    "Most clinics can go live within 5–7 business days. During setup, we configure the WhatsApp workflow, booking process, clinic services, working hours, Google Calendar connection, and reminder messages. Before launch, we test the full booking flow to make sure everything works correctly.",
+  ],
+  [
+    "Does Mexa work with WhatsApp?",
+    "Yes. Mexa can connect with WhatsApp Business to answer patient questions, collect booking details, send appointment reminders, and notify your team when a new request arrives.",
+  ],
+  [
+    "Can it connect to Google Calendar?",
+    "Yes. Confirmed appointments can be added automatically to Google Calendar, helping your team stay updated without manually copying booking details.",
+  ],
+  [
+    "Is patient data secure?",
+    "Security is a core part of the system. We use secure connections, controlled access, and protected cloud infrastructure to help keep clinic and patient information private.",
+  ],
+  [
+    "Can I request a custom system?",
+    "Yes. Every clinic has a different workflow. Mexa can be customized based on your services, booking rules, languages, staff process, and follow-up needs.",
+  ],
+  [
+    "Do you provide support after launch?",
+    "Yes. After deployment, we can help monitor the system, adjust automations, improve responses, and add new features as your clinic grows.",
+  ],
+].map(([q, a], index) => (
+  <div
+    key={q}
+    className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:border-cyan-400/40"
+  >
+    <button
+      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+      className="flex w-full items-center justify-between p-6 text-left"
+    >
+      <span className="text-lg font-semibold">{q}</span>
+
+      <ChevronDown
+        className={`transition-transform duration-300 ${
+          openFaq === index ? "rotate-180 text-cyan-300" : ""
+        }`}
+      />
+    </button>
+
+    <div
+      className={`grid transition-all duration-300 ${
+        openFaq === index
+          ? "grid-rows-[1fr]"
+          : "grid-rows-[0fr]"
+      }`}
+    >
+      <div className="overflow-hidden">
+        <p className="px-6 pb-6 text-slate-400">
+          {a}
+        </p>
+      </div>
+    </div>
+  </div>
+))}
     </div>
   </div>
 </section>
 
-<section className="mx-2 mt-4 rounded-[28px] border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-violet-600/10 px-5 py-24 text-center text-white md:px-8">
+<section id="contact" className="mx-2 mt-4 rounded-[28px] border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-violet-600/10 px-5 py-24 text-center text-white md:px-8">
   <h2 className="mx-auto max-w-4xl text-3xl font-bold md:text-6xl">
     Ready to automate your business?
   </h2>
@@ -469,13 +569,19 @@ export default function Home() {
   </p>
 
   <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-    <button className="rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600 px-8 py-4 font-semibold shadow-[0_0_45px_rgba(59,130,246,.35)]">
-      Book a Free Demo →
-    </button>
+    <a
+  href="/contact"
+  className="btn-interactive rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600 px-8 py-4 font-semibold shadow-[0_0_45px_rgba(59,130,246,.35)]"
+>
+  Book a Free Demo →
+</a>
 
-    <button className="rounded-2xl border border-white/10 px-8 py-4 font-semibold hover:bg-white/10">
-      Contact Sales
-    </button>
+<a
+  href="/contact"
+  className="btn-interactive rounded-2xl border border-white/10 px-8 py-4 font-semibold hover:bg-white/10"
+>
+  Contact Sales
+</a>
   </div>
 </section>
 
@@ -488,7 +594,7 @@ export default function Home() {
 
     <div className="flex flex-wrap gap-6 text-sm text-slate-400">
       <span>Products</span>
-      <span>Pricing</span>
+      <a href="#pricing">Pricing</a>
       <span>Contact</span>
       <span>Privacy Policy</span>
       <span>Terms</span>
