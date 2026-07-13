@@ -13,6 +13,7 @@ import {
 import ChatDemo from "@/components/ChatDemo";
 import FadeIn from "@/components/FadeIn";
 import { useState } from "react";
+import Link from "next/link";
 
 const logos = ["CLINIC+", "HealthCare Pro", "Smile Center", "DERMA CLINIC", "Wellness Hub", "PureCare"];
 
@@ -130,9 +131,13 @@ export default function Home() {
 >
   Book a Free Demo →
 </a>
-              <button className="btn-interactive flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-10 py-4 font-medium backdrop-blur">
-                Watch 60s Demo <CirclePlay size={22} />
-              </button>
+              <Link
+  href="/demo"
+  className="btn-interactive flex items-center gap-4 rounded-2xl border border-white/20 px-9 py-4"
+>
+  Watch Demo
+  <CirclePlay size={22} />
+</Link>
             </div>
           </div>
         </div>
