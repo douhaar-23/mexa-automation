@@ -386,7 +386,7 @@ export default function Home() {
     </h2>
 
     <p className="mx-auto mt-6 max-w-3xl text-center text-base md:text-lg leading-8 text-slate-300">
-      Start with a free 7-day setup and choose the plan that fits your business.
+      Choose the solution that best fits your clinic. Contact us for a personalized quote.
     </p>
 
     <div className="mt-16 grid gap-8 lg:grid-cols-3">
@@ -396,9 +396,14 @@ export default function Home() {
         <p className="mt-4 text-slate-400">For small clinics and businesses starting with AI automation.</p>
 
         <div className="mt-8">
-          <span className="text-3xl md:text-5xl font-bold">$99</span>
-          <span className="text-slate-400"> / month</span>
-        </div>
+  <span className="text-2xl md:text-4xl font-bold">
+    Starting from
+  </span>
+  <br />
+  <span className="text-4xl md:text-6xl font-bold">
+    $99
+  </span>
+</div>
 
         <ul className="mt-8 space-y-4 text-slate-300">
           <li>✓ WhatsApp AI Receptionist</li>
@@ -408,7 +413,7 @@ export default function Home() {
         </ul>
 
         <button className="btn-interactive mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
-          Get Started
+          Contact Sales
         </button>
       </div>
 
@@ -422,8 +427,8 @@ export default function Home() {
         <p className="mt-4 text-slate-300">For businesses that want full automation and better customer follow-up.</p>
 
         <div className="mt-8">
-          <span className="text-3xl md:text-5xl font-bold">$249</span>
-          <span className="text-slate-400"> / month</span>
+          <span className="text-3xl md:text-5xl font-bold">Contact for Pricing</span>
+          
         </div>
 
         <ul className="mt-8 space-y-4 text-slate-200">
@@ -435,7 +440,7 @@ export default function Home() {
         </ul>
 
         <button className="btn-interactive mt-10 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 px-6 py-3 font-semibold">
-          Start Free Setup
+          Book Free Consultation
         </button>
       </div>
 
@@ -445,7 +450,7 @@ export default function Home() {
         <p className="mt-4 text-slate-400">For companies that need custom AI workflows and advanced integrations.</p>
 
         <div className="mt-8">
-          <span className="text-3xl md:text-5xl font-bold">Custom</span>
+          <span className="text-3xl md:text-5xl font-bold">Custom Quote</span>
         </div>
 
         <ul className="mt-8 space-y-4 text-slate-300">
@@ -456,7 +461,7 @@ export default function Home() {
         </ul>
 
         <button className="btn-interactive mt-10 w-full rounded-xl border border-white/10 px-6 py-3 font-semibold hover:bg-white/10">
-          Contact Sales
+          Book Free Consultation
         </button>
       </div>
     </div>
