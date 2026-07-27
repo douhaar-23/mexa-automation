@@ -225,15 +225,20 @@ html,
 body {
   scroll-behavior: smooth !important;
 }
-:root{
-  --font-heading: "Playfair Display", serif;
+:root {
+  --font-heading: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
 }
 
-body{
+body {
   font-family: var(--font-body);
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
